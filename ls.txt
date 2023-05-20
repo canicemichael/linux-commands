@@ -1,0 +1,9 @@
+The way to use the ls command, ls [options] [location]
+
+In the above example, the square brackets ( [ ] ) mean that 
+those items are optional, we may run the command with or 
+without them. In the terminal below I have run ls in a few 
+different ways to demonstrate.
+
+checkout this link for more context https://ryanstutorials.net/linuxtutorial/navigation.php
+
