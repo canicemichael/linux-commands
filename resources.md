@@ -1,5 +1,7 @@
 Useful links
 
+[https://ryanstutorials.net/linuxtutorial/](https://ryanstutorials.net/linuxtutorial/)
+
 [https://linux.die.net/](https://linux.die.net/)
 
 [https://help.ubuntu.com/community/UsingTheTerminal](https://help.ubuntu.com/community/UsingTheTerminal)
