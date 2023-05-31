@@ -1,0 +1,61 @@
+Notes on Sets
+Using sets of characters can sometimes lead to odd behaviour. 
+For example, you may use the range [a-f] and find that it matches 
+D. This has to do with the character tables the system is using. 
+Most systems have a character table where all the lowercase 
+letters come first, then the uppercase letters. 
+eg. abcdef....xyzABCD... A few systems however, alternate the 
+lowercase and uppercase letters. eg. aAbBcCdD...yYzZ. 
+If you encounter some strange behaviour and you're using ranges, 
+this is the first place to check.
+
+Any characters which would normally have a special meaning 
+(metacharacters) lose their special meaning and become literally 
+their character when inside a range. The exception to this is 
+the caret ( ^ ) which gains a new meaning which is not.
+
+MULTIPLIERS
+Multipliers allow us to increase the number of times an item may occur
+in our regular expression. Here is the basic set of Multipliers
+
+1. * - item occurs zero or more times.
+2. + - item occurs one or more times.
+3. ? - item occurs zero or one times.
+4. {5} - item occurs five times.
+5. {3,7} - item occurs between 3 and 7 times.
+6. {2,} - item occurs at least 2 times.
+
+SHORTHAND CHARACTER CLASSES
+\s - matches anything which is considered whitespace. This could be a space, tab, line break etc
+\S - matches the opposite of \s, that is anything which is not considered whitespace.
+\d - matches anything which is considered a digit. ie 0 - 9 (it is effectively a shortcut for [0-9]).
+\D - matches the opposite of \d, that is anything which is not considered a digit.
+\w - matches anything which is considered a word character. That is [A-Za-z0-9_]. Note the inclusion of '_'. This is bcos in programming and other areas we regularly use the underscore as part of, say, a variable or function name.
+\W - matches the opposite of \w, that is anything which is not considered a word character.
+
+Non PRINTABLE CHARACTERS
+1. Tab - represented in regex as \t
+2. Carriage return - represented in regex as \r
+3. Line feed (or newline) - represented in regex as \n 
+
+
+Depending on the OS you are using, one or a combination of these can be used to signify a new line.
+* Windows - uses the sequence \r\n (in that order)
+* Mac OS - uses the sequence \r 
+* Unix/Linux and OSX - uses the sequence \n 
+
+
+WORD BOUNDARIES
+Word boundaries are an example of another width character used often within
+regualar expressions. A word boundary is the very beginning or end 
+of a word. They may be identified using the following:
+* \< - represents the beginning of a word.
+* \> - represents the end of a word.
+* \b - represents either the beginning or end of a word.
+
+The first two items listed above aren't available in all regular
+expression tools but \b generally is so it is the safer one to use.
+
+A word is generally considered to be a string of characters that would be matched by the 
+\w character class (that is, A-Z, a-z, 0-9 and _).
+Note that this doesn't include punctuation such as the apostrophe (').
